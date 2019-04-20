@@ -13,26 +13,38 @@ namespace TeslaDashcamPlayer
 {
     public partial class Form1 : Form
     {
+        string selectedRootFolder;
+
         public Form1()
         {
             InitializeComponent();
-
-            foreach (DriveInfo drive in DriveInfo.GetDrives())
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
             {
-                comboBox1.Items.Add(drive.Name);
+                fbd.RootFolder = Environment.SpecialFolder.MyComputer;
 
-                if (comboBox1.SelectedIndex == -1 && drive.DriveType == DriveType.Removable)
+                fbd.Description = "Select the TeslaCam folder and press OK:";
+
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
+                    selectedRootFolder = fbd.SelectedPath;
+
+                    LoadItems();
+
+                    button1.Text = selectedRootFolder;
                 }
             }
-
         }
 
         private void LoadItems()
         {
             listBox1.Items.Clear();
-            DirectoryInfo dinfo = new DirectoryInfo(comboBox1.SelectedItem + "TeslaCam\\RecentClips");
+            DirectoryInfo dinfo = new DirectoryInfo(selectedRootFolder + "\\RecentClips");
             if (dinfo.Exists)
             {
                 FileInfo[] files = dinfo.GetFiles("*-front.mp4");
@@ -42,7 +54,7 @@ namespace TeslaDashcamPlayer
                 }
 
                 listBox2.Items.Clear();
-                dinfo = new DirectoryInfo(comboBox1.SelectedItem + "TeslaCam\\SavedClips");
+                dinfo = new DirectoryInfo(selectedRootFolder + "\\SavedClips");
                 var directories = dinfo.GetDirectories();
                 foreach (DirectoryInfo directory in directories)
                 {
@@ -122,16 +134,16 @@ namespace TeslaDashcamPlayer
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem = listBox1.SelectedItem.ToString();
-            axWindowsMediaPlayerFront.URL = comboBox1.SelectedItem + "TeslaCam\\RecentClips\\" + selectedItem + "-front.mp4";
-            axWindowsMediaPlayerLeft.URL = comboBox1.SelectedItem + "TeslaCam\\RecentClips\\" + selectedItem + "-left_repeater.mp4";
-            axWindowsMediaPlayerRight.URL = comboBox1.SelectedItem + "TeslaCam\\RecentClips\\" + selectedItem + "-right_repeater.mp4";
+            axWindowsMediaPlayerFront.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-front.mp4";
+            axWindowsMediaPlayerLeft.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-left_repeater.mp4";
+            axWindowsMediaPlayerRight.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-right_repeater.mp4";
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox3.Items.Clear();
             string selectedItem = listBox2.SelectedItem.ToString();
-            DirectoryInfo dinfo = new DirectoryInfo(comboBox1.SelectedItem + "TeslaCam\\SavedClips\\" + selectedItem);
+            DirectoryInfo dinfo = new DirectoryInfo(selectedRootFolder + "\\SavedClips\\" + selectedItem);
             FileInfo[] files = dinfo.GetFiles("*-front.mp4");
             foreach (FileInfo file in files)
             {
@@ -143,9 +155,9 @@ namespace TeslaDashcamPlayer
         {
             string selectedFolder = listBox2.SelectedItem.ToString();
             string selectedItem = listBox3.SelectedItem.ToString();
-            axWindowsMediaPlayerFront.URL = comboBox1.SelectedItem + "TeslaCam\\SavedClips\\" + selectedFolder + "\\" +  selectedItem + "-front.mp4";
-            axWindowsMediaPlayerLeft.URL = comboBox1.SelectedItem + "TeslaCam\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-left_repeater.mp4";
-            axWindowsMediaPlayerRight.URL = comboBox1.SelectedItem + "TeslaCam\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-right_repeater.mp4";
+            axWindowsMediaPlayerFront.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" +  selectedItem + "-front.mp4";
+            axWindowsMediaPlayerLeft.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-left_repeater.mp4";
+            axWindowsMediaPlayerRight.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-right_repeater.mp4";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
