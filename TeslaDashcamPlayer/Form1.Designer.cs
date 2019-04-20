@@ -150,7 +150,7 @@
             this.Controls.Add(this.axWindowsMediaPlayerFront);
             this.Controls.Add(this.axWindowsMediaPlayerLeft);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tesla Dashcam Player";
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerFront)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerRight)).EndInit();

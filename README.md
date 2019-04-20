@@ -4,6 +4,8 @@
 
 This player opens 3 movies at once; the front camera with the two side cameras next to it.
 
+![Screenshot](TeslaDashcamPlayer_screenshot.png)
+
 
 ## Installation
 
