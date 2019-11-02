@@ -63,7 +63,7 @@ namespace TeslaDashcamPlayer
             }
         }
 
-        private void axWindowsMediaPlayer2_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        private void axWindowsMediaPlayerFront_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             switch (e.newState)
             {
@@ -75,18 +75,21 @@ namespace TeslaDashcamPlayer
                     currentStateLabel.Text = "Stopped";
                     axWindowsMediaPlayerLeft.Ctlcontrols.stop();
                     axWindowsMediaPlayerRight.Ctlcontrols.stop();
+                    axWindowsMediaPlayerBack.Ctlcontrols.stop();
                     break;
 
                 case 2:    // Paused
                     currentStateLabel.Text = "Paused";
                     axWindowsMediaPlayerLeft.Ctlcontrols.pause();
                     axWindowsMediaPlayerRight.Ctlcontrols.pause();
+                    axWindowsMediaPlayerBack.Ctlcontrols.pause();
                     break;
 
                 case 3:    // Playing
                     currentStateLabel.Text = "Playing";
                     axWindowsMediaPlayerLeft.Ctlcontrols.play();
                     axWindowsMediaPlayerRight.Ctlcontrols.play();
+                    axWindowsMediaPlayerBack.Ctlcontrols.play();
                     break;
 
                 case 4:    // ScanForward

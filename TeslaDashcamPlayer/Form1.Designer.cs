@@ -63,7 +63,7 @@
             this.axWindowsMediaPlayerFront.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerFront.OcxState")));
             this.axWindowsMediaPlayerFront.Size = new System.Drawing.Size(640, 480);
             this.axWindowsMediaPlayerFront.TabIndex = 3;
-            this.axWindowsMediaPlayerFront.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer2_PlayStateChange);
+            this.axWindowsMediaPlayerFront.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayerFront_PlayStateChange);
             // 
             // axWindowsMediaPlayerRight
             // 
