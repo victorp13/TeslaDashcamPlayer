@@ -137,6 +137,7 @@ namespace TeslaDashcamPlayer
             axWindowsMediaPlayerFront.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-front.mp4";
             axWindowsMediaPlayerLeft.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-left_repeater.mp4";
             axWindowsMediaPlayerRight.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-right_repeater.mp4";
+            axWindowsMediaPlayerBack.URL = selectedRootFolder + "\\RecentClips\\" + selectedItem + "-back.mp4";
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,6 +159,7 @@ namespace TeslaDashcamPlayer
             axWindowsMediaPlayerFront.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" +  selectedItem + "-front.mp4";
             axWindowsMediaPlayerLeft.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-left_repeater.mp4";
             axWindowsMediaPlayerRight.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-right_repeater.mp4";
+            axWindowsMediaPlayerBack.URL = selectedRootFolder + "\\SavedClips\\" + selectedFolder + "\\" + selectedItem + "-back.mp4";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

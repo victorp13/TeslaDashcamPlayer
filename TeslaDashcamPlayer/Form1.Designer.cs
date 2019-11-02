@@ -39,9 +39,11 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.axWindowsMediaPlayerBack = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerFront)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerBack)).BeginInit();
             this.SuspendLayout();
             // 
             // axWindowsMediaPlayerLeft
@@ -134,11 +136,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // axWindowsMediaPlayerBack
+            // 
+            this.axWindowsMediaPlayerBack.Enabled = true;
+            this.axWindowsMediaPlayerBack.Location = new System.Drawing.Point(980, 522);
+            this.axWindowsMediaPlayerBack.Name = "axWindowsMediaPlayerBack";
+            this.axWindowsMediaPlayerBack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerBack.OcxState")));
+            this.axWindowsMediaPlayerBack.Size = new System.Drawing.Size(640, 480);
+            this.axWindowsMediaPlayerBack.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2272, 530);
+            this.ClientSize = new System.Drawing.Size(2272, 1011);
+            this.Controls.Add(this.axWindowsMediaPlayerBack);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
@@ -154,6 +166,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerFront)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +184,7 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Button button1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerBack;
     }
 }
 
