@@ -2,7 +2,7 @@
 
 ## About
 
-This player opens 3 movies at once; the front camera with the two side cameras next to it.
+This player opens 4 movies at once; the front camera, two side cameras next to it, and the back camera below.
 
 ![Screenshot](TeslaDashcamPlayer_screenshot.png)
 
