@@ -54,6 +54,7 @@
             this.axWindowsMediaPlayerLeft.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerLeft.OcxState")));
             this.axWindowsMediaPlayerLeft.Size = new System.Drawing.Size(640, 480);
             this.axWindowsMediaPlayerLeft.TabIndex = 0;
+            this.axWindowsMediaPlayerLeft.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.axWindowsMediaPlayer_ClickEvent);
             // 
             // axWindowsMediaPlayerFront
             // 
@@ -64,6 +65,7 @@
             this.axWindowsMediaPlayerFront.Size = new System.Drawing.Size(640, 480);
             this.axWindowsMediaPlayerFront.TabIndex = 3;
             this.axWindowsMediaPlayerFront.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayerFront_PlayStateChange);
+            this.axWindowsMediaPlayerFront.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.axWindowsMediaPlayer_ClickEvent);
             // 
             // axWindowsMediaPlayerRight
             // 
@@ -73,6 +75,7 @@
             this.axWindowsMediaPlayerRight.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerRight.OcxState")));
             this.axWindowsMediaPlayerRight.Size = new System.Drawing.Size(640, 480);
             this.axWindowsMediaPlayerRight.TabIndex = 4;
+            this.axWindowsMediaPlayerRight.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.axWindowsMediaPlayer_ClickEvent);
             // 
             // currentStateLabel
             // 
@@ -144,6 +147,7 @@
             this.axWindowsMediaPlayerBack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerBack.OcxState")));
             this.axWindowsMediaPlayerBack.Size = new System.Drawing.Size(640, 480);
             this.axWindowsMediaPlayerBack.TabIndex = 13;
+            this.axWindowsMediaPlayerBack.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.axWindowsMediaPlayer_ClickEvent);
             // 
             // Form1
             // 

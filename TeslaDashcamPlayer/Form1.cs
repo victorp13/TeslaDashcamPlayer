@@ -169,5 +169,18 @@ namespace TeslaDashcamPlayer
         {
             LoadItems();
         }
+
+        private void axWindowsMediaPlayer_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
+        {
+            if (axWindowsMediaPlayerFront.playState.Equals(WMPLib.WMPPlayState.wmppsPaused))
+            {
+                axWindowsMediaPlayerFront.Ctlcontrols.play();
+            }
+            else
+            {
+                axWindowsMediaPlayerFront.Ctlcontrols.pause();
+            }
+            
+        }
     }
 }
